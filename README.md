@@ -4,10 +4,10 @@
 
 ## Architecture
 
-- Apps: Web application
+- App: Application
 - Business: Services
 - Core: Configuration, Constants, Entities, Enums, Interfaces
-- Data: EF COntext, Repositories
+- Data: EF Context, Repositories
 
 ## Features
 
@@ -20,7 +20,3 @@
 - .NET 6.0
 - Bootstrap 5.3.0
 - Logging: Serilog
-
-## Todos
-
-- [] Admin: Use Mazer

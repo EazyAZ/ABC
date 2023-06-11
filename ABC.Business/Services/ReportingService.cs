@@ -2,20 +2,60 @@ namespace ABC.Business.Services;
 
 public partial class ReportingService : IReportingService
 {
-    private readonly IReportingRepository _repository;
-
-    public ReportingService(IReportingRepository sampleRepository)
+    public ReportingService()
     {
-        _repository = sampleRepository;
-    }
-
-    public List<XY<string, int>> GetByRange(ReportingType reportingType, RangeType range)
-    {
-        return _repository.SelectByRange(reportingType, range);
     }
 
     public int GetCount(ReportingType reportingType, string filter)
     {
-        return _repository.SelectCount(reportingType, filter);
+        var rnd = new Random();
+        return rnd.Next(1, 1000);
+    }
+
+    public List<XY<string, int>> GetByRange(ReportingType reportingType, RangeType range)
+    {
+        var result = new List<XY<string, int>>();
+
+        var rnd = new Random();
+        switch (reportingType)
+        {
+            case ReportingType.Orders:
+                switch (range)
+                {
+                    case RangeType.AllTime:
+                        result.Add(new XY<string, int>("", rnd.Next(1, 1000)));
+                        break;
+                    case RangeType.Yearly:
+                        foreach (var i in Enumerable.Range(2012, 12))
+                        {
+                            result.Add(new XY<string, int>(i.ToString(), rnd.Next(200, 500)));
+                        }
+                        break;
+                    //case RangeType.Quarter:
+                    //    break;
+                    case RangeType.Monthly:
+                        foreach (var i in Enumerable.Range(1, 12))
+                        {
+                            result.Add(new XY<string, int>(new DateTime(2000, i, 1).ToString("MMMM"), rnd.Next(20, 50)));
+                        }
+                        break;
+                    //case RangeType.Weekly:
+                    //    break;
+                    //case RangeType.Daily:
+                    //    break;
+                    //case RangeType.DayOfWeek:
+                    //    break;
+                    //case RangeType.Hourly:
+                    //    break;
+                    default:
+                        break;
+                }
+                break;
+
+            default:
+                break;
+        }
+
+        return result;
     }
 }

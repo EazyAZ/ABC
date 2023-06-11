@@ -26,20 +26,23 @@
             <div class="border-top border-dark border-opacity-25 mt-3 mb-1">
             </div>
             <div class="nav nav-pills flex-column">
-                <a class="nav-link text-nowrap bg-transparent text-light" href="/admin">
+                @* <a class="nav-link text-nowrap bg-transparent text-light" href="/admin">
                     <i class="bi bi-house-door-fill"></i><span class="text-menu"> Admin</span>
-                </a>
-                <a class="nav-link text-nowrap bg-transparent text-light te-with-caret caret-open"
+                </a> *@
+                <a class="nav-link text-nowrap bg-transparent text-light te-with-caret"
                    data-bs-toggle="collapse" href="#collapseDemo" role="button" aria-expanded="false"
                    aria-controls="collapseDemo">
-                    <i class="bi bi-layers-fill"></i><span class="text-menu"> Parent</span>
+                    <i class="bi bi-layers-fill"></i><span class="text-menu"> Reporting</span>
                 </a>
                 <div class="collapse pb-2" id="collapseDemo">
-                    <a class="nav-link text-nowrap bg-transparent text-light" href="/admin/dashboard">
+                    <a class="nav-link text-nowrap bg-transparent text-light" href="/admin/reporting">
                         <i class="bi bi-layout-text-window-reverse"></i>
-                        <span class="text-menu"> Child 1</span>
+                        <span class="text-menu"> Charts</span>
                     </a>
                 </div>
+                <a class="nav-link text-nowrap bg-transparent text-light" href="/admin">
+                    <i class="bi bi-people"></i><span class="text-menu"> Users</span>
+                </a>
             </div>
             <!-- end sidenav content -->
         </div>
@@ -79,7 +82,7 @@
                     </button> *@
 
                     <div class="btn-group">
-                        <button type="button" class="btn btn-secondary dropdown-toggle btn-sm mx-2"
+                        <button type="button" class="btn btn-primary dropdown-toggle btn-sm mx-2"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-person-fill"></i>
                         </button>
