@@ -4,8 +4,6 @@ var logger = builder.AddSerilog();
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddBusinessServices();
-//builder.Services.AddDataRepositories();
-//builder.Services.AddDbContext(builder.Configuration);
 builder.Services.ConfigureAppSettingsSection(builder.Configuration);
 
 logger.LogInformation("Building application.");
